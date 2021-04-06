@@ -1,0 +1,11 @@
+解压压缩包后在根目录下创建data文件夹，再到data文件夹下创建db，logs文件夹，再到logs文件夹下面创建mongodb.log日志文件
+mongodb目录下建立文件夹conf,在该文件夹下创建 mongod.conf配置文件，该配置文件内容如下：
+storage:
+    dbPath: D:\MongoDB\mongodb-win32-x86_64-2012plus-4.2.2\data\db
+systemLog:
+    destination: file
+    path: D:\MongoDB\mongodb-win32-x86_64-2012plus-4.2.2\data\logs\mongodb.log
+    logAppend: true
+
+配置完成后以管理员方式进入docs窗口到存放MongoDB的bin目录下执行这个配置文件，serviceName 指定MongoDB的服务名称
+mongod --config D:\MongoDB\mongodb-win32-x86_64-2012plus-4.2.2\conf\mongod.conf --install --serviceName "MongoDB"
